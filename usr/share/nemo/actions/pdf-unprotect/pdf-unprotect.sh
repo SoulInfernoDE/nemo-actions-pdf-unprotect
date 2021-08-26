@@ -8,8 +8,9 @@
 #Base script (c)by Alfcx (THX!) #
 #################################
 #
-dir=`dirname "$1"` ;
-base=`basename "$1"` ;
+file="$1" ;
+dirname=`dirname "$file"` ;
+basename=`basename "$file"` ;
 #
 # Get settings from config.ini
 scriptdir=`dirname "$0"` ;
@@ -34,7 +35,7 @@ if ! ASKPWD=$(zenity --entry \
 fi ;
 # 
 # Unprotect the file
-#pdftk '$dir/$base' input_pw $ASKPWD output cat output '$dir/$base''-unprotected.pdf';
+#pdftk '$dirname/$basename' input_pw $ASKPWD output cat output '$dirname/$basename''-unprotected.pdf';
 #
 # Example of what the finished line should do:
 #pdftk '$PATH_TO_FILE/$FILENAME.pdf' input_pw $ASKPWD output '$PATH_TO_FILE/$FILENAME''-unprotected.pdf';
